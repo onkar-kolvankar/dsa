@@ -80,7 +80,7 @@ int main()
     delete1(head,k);// deleting middle node of linked list
     print(head);
 
-
+    // file working properly 
     return 0;
 
 }
