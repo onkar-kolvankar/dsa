@@ -32,6 +32,7 @@ void insertAtback(Node* &head,int data)
     {
         t=t->next;
     }
+//     djfiefef f daf f
 
     t->next=temp;
 
