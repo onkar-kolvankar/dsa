@@ -23,6 +23,31 @@ void insertAthead(Node* &head,int data)
      temp->next=head;
      head=temp;
 }
+
+void insertAtback(Node* &head,int data)
+{
+    Node *temp=new Node(data);
+    Node *t=head;
+   while(t->next!=NULL)
+    {
+        t=t->next;
+    }
+
+    t->next=temp;
+
+
+}void delete1(Node* &head,int n)
+{
+      Node* temp=head;
+      
+      
+      while(temp->next->data!=n)
+      {
+        temp=temp->next;
+      }
+     temp->next=temp->next->next;
+
+}
 void print(Node* &head)
 {
     Node *temp=head;
@@ -33,44 +58,6 @@ void print(Node* &head)
         temp=temp->next;
     }
     cout<<endl;
-}
-void insertAtback(Node* &head,int data)
-{
-    Node *temp=new Node(data);
-    Node *t=head;
-   while(t->next!=NULL)
-    {
-        t=t->next;
-    }
-    t->next=temp;
-
-
-}void delete1(Node* &head,int n)
-{
-      Node* temp=head;
-      int r=0;
-      Node* pre;
-      
-      while(r<=n+1 && temp->next!=NULL)
-      {
-         cout<<temp->data<<endl;
-        temp=temp->next;
-       
-        r=r+1;
-        cout<<"value of r"<<r<<endl;
-        cout<<"value of n"<<n<<endl;
-        if(r=n-1)
-        {
-            Node* pre=temp;
-            cout<<"Pre value"<<pre->data<<endl;
-        }
-        
-      }
-      Node *post=temp;
-      cout<<"post value"<<post->data;
-      pre->next=post;
-     
-
 }
 int main()
 {
@@ -87,12 +74,13 @@ int main()
    //1 print(head);
     insertAtback(head,80);
     insertAtback(head,90);
-   // print(head);
+    print(head);
     cout<<"Enter the node number you want to delete"<<endl;
     cin>>k;
-    delete1(head,k);
+    delete1(head,k);// deleting middle node of linked list
     print(head);
 
 
     return 0;
+
 }
